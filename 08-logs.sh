@@ -18,11 +18,11 @@ else
    echo "Error:Login to root user"
    exit 1
 fi
-   yum install mysql -y &>>LOG_File
+   yum install mysql -y &>> $LOG_File
 
 validate $? MYSQL
 
-   yum install git -y &>>LOG_File
+   yum install git -y &>> $LOG_File
    
 validate $? GIT
 
