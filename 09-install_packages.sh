@@ -1,5 +1,4 @@
 #!/bin/bash
-ID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 N="\e[0m"
@@ -14,6 +13,7 @@ validate(){
        echo -e "$G $2 is installed successfully installed $N"
     fi
 }
+ID=$(id -u)
 if [ $ID -ne 0 ]
 then 
    echo -e "$R Error : Login to root user $N "
@@ -22,15 +22,15 @@ else
   echo " You are in Root user "
 fi
 
-for pacakage in $@
+for package in $@
 do 
-   yum list install $pacakage 
+   yum list installed $package 
    if [ $? -ne 0 ]
    then 
-      yum install $pacakage -y
-      validate $? $pacakage
+      yum install $package -y
+      validate $? $package
    else
-      echo -e "$pacakage is already installed $Y Skipping $N"
+      echo -e "$package is already installed $Y Skipping $N"
     fi
 done
       
