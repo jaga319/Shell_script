@@ -1,8 +1,8 @@
 #!/bin/bash
 Date=$(date +%F-%H-%M-%S)
 LOG_File="/tmp/$0-$Date.log"
-R=\e[31m
-N=\e[0m
+R="\e[31m"
+N="\e[0m"
 validate(){
     if [ $1 -ne 0 ]
 then 
