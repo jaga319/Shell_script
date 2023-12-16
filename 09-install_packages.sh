@@ -29,7 +29,7 @@ do
       yum install $pacakage -y
       validate $? $pacakage
    else
-      echo "$pacakage is already installed $Y Skipping"
+      echo "$pacakage is already installed $Y Skipping $N"
     fi
 done
       
