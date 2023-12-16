@@ -9,17 +9,18 @@ Y="\e[33m"
 validate(){
     if [ $1 -ne 0 ]
     then
-       echo "$R Error:$2 is not installed successfully $N"
+       echo -e "$R Error:$2 is not installed successfully $N"
     else
-       echo "$G $2 is installed successfully installed $N"
+       echo -e "$G $2 is installed successfully installed $N"
     fi
 }
 if [ $ID -ne 0 ]
 then 
-   echo "$R Error : Login to root user $N "
+   echo -e "$R Error : Login to root user $N "
    exit 1
 else
   echo " You are in Root user "
+fi
 
 for pacakage in $@
 do 
@@ -29,7 +30,7 @@ do
       yum install $pacakage -y
       validate $? $pacakage
    else
-      echo "$pacakage is already installed $Y Skipping $N"
+      echo -e "$pacakage is already installed $Y Skipping $N"
     fi
 done
       
