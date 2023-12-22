@@ -6,7 +6,6 @@ do
 if [ $S -gt 1 ]
 then
    echo "$disk_space" | awk '$5>10 {print $1 " - " $5}' 
-   echo "$D"
    echo "The above disk space is more than 90% . Please take neccesary action "
 fi
 done
