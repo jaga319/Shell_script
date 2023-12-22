@@ -20,7 +20,7 @@ echo "$disk_space" | tail -n +2 | while read -r line; do
     percentage=$(echo "$line" | awk '{print $5}' | sed 's/[^0-9]//g')
 
     # Check if the percentage is greater than 1
-    if [ "$percentage" -gt 1 ]; then
+    if [ "$percentage" -gt 0 ]; then
         echo "$filesystem - $percentage%"
         echo "The above disk space is more than 1%. Please take necessary action."
     fi
