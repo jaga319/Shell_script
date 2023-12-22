@@ -1,6 +1,6 @@
 #!/bin/bash
 disk_space=$(df -h)
-D=$(echo "$disk_space" | awk '$5>10 {print $5}' | sed 's/[^0-9]//g')
+D=$(echo "$disk_space" | awk '$5>0 {print $5}' | sed 's/[^0-9]//g')
 echo "$D"
 # if [ $D -gt 10 ]
 # then
