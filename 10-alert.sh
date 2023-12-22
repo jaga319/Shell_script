@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 disk_space=$(df -h)
 D=$(echo "$disk_space" | awk '$5>1 {print $5}' | sed 's/[^0-9]//g')
 for S in $D
