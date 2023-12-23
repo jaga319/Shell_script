@@ -16,5 +16,5 @@ do
    echo "user_id:$user_id"
    echo "user_fullname:$user_fullname"
      
-done <<< $file
+done < $file
 
