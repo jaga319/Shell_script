@@ -1,5 +1,5 @@
 #!/bin/bash
-disk_usage=$(df -hT |grep -vE 'tmp|file')
+disk_usage=$(df -hT | grep -vE 'tmp|File')
 # message="The disk space is more than $thresold% . Please take neccesary action "
 while IFS= read  line 
 do
