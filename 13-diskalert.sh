@@ -18,3 +18,4 @@ then
    echo "please check above disk spaces are more than 1%"
 else 
     echo "all disk_space are fine no action required "
+fi
