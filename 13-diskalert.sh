@@ -3,7 +3,7 @@ disk_usage=$(df -hT | grep -vE 'tmp|File')
 # message="The disk space is more than $thresold% . Please take neccesary action "
 FLAG1="FALSE"
 FLAG2="TRUE"
-message=""
+message=" "
 while IFS= read  line 
 do
     useage=$(echo $line| awk '{print $6F}'|cut -d % -f1)
@@ -11,7 +11,7 @@ do
     if [ $useage -ge 1 ]
     then 
        FLAG1="TRUE"
-       $message+=echo "$filesystem : $useage \n"
+       message+="$filesystem : $useage \n"
     fi
 done <<< $disk_usage
 
