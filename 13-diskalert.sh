@@ -10,13 +10,14 @@ do
     if [ $useage -ge 1 ]
     then 
        FLAG1="TRUE"
-       echo "HIGH DISK USAGE $filesystem : $useage"
+       echo "$filesystem : $useage"
     fi
 done <<< $disk_usage
 
 if [ "$FLAG1" == "$FLAG2" ]
 then
-   echo "please check above disk spaces are more than 1%"
+   message="please check above disk spaces are more than 1%"
+   echo "$message" | mail -s "High Disk Space Usage" mummadijagadeesh219@gmail.com
 else 
-    echo "all disk_space are fine no action required "
+   echo "All disk spaces are fine" | mail -s "High Disk Space Usage" mummadijagadeesh219@gmail.com
 fi
