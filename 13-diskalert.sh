@@ -4,6 +4,7 @@ disk_usage=$(df -hT |grep -vE 'tmp|file')
 while IFS= read  line 
 do
     useage=$(echo $line| awk '{print $6F}'|cut -d % -f1)
+    echo $usage
     # filesystem=$(echo "$line" | awk '{print $1F}')
     # if [ useage -gt 10 ]
     # then 
