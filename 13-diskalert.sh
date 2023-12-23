@@ -5,9 +5,9 @@ while IFS= read  line
 do
     useage=$(echo $line| awk '{print $6F}'|cut -d % -f1)
     echo "$useage"
-    # filesystem=$(echo "$line" | awk '{print $1F}')
-    # if [ useage -gt 10 ]
-    # then 
-    #    echo "HIGH DISK USAGE $filesystem : $useage"
-    # fi
+    filesystem=$(echo "$line" | awk '{print $1F}')
+    if [ useage -gt 10 ]
+    then 
+       echo "HIGH DISK USAGE $filesystem : $useage"
+    fi
 done <<< $disk_usage
