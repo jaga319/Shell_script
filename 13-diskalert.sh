@@ -18,7 +18,7 @@ done <<< $disk_usage
 if [ "$FLAG1" == "$FLAG2" ]
 then
    message2="please check above disk spaces are more than 1%"
-   echo -e "$message\n$message2" | mail -s "High Disk Space Usage" mummadijagadeesh219@gmail.com
+   echo -e "Hi Team \n$message\n$message2\n Regards \n HPPV" | mail -s "High Disk Space Usage" mummadijagadeesh219@gmail.com
 else 
    echo "All disk spaces are fine" | mail -s "High Disk Space Usage" mummadijagadeesh219@gmail.com
 fi
