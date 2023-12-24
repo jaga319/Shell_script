@@ -1,5 +1,4 @@
 #!/bin/bash
-
 AMI="ami-03265a0778a880afb"
 SG="sg-0ef3f217f9042a8d7"
 INSTANCES=("mongodb" "redis" "mysql" "rabbitmq" "catalogue" "user" "cart" "shipping" "payment" "dispatch" "web")
@@ -13,6 +12,7 @@ do
     else
         INSTANCES_TYPE="t2.micro"
     fi 
-    aws ec2 run-instances --image-id $AMI --instance-type $INSTANCES_TYPE --security-group-ids $SG 
-    #--tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=\"$i\"}]"
+    aws ec2 run-instances --image-id $AMI --instance-type $INSTANCES_TYPE --security-group-ids $SG --count 1
 done
+
+    #--tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=\"$i\"}]"
