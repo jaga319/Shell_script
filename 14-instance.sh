@@ -12,7 +12,7 @@ do
     else
         INSTANCES_TYPE="t2.micro"
     fi 
-    IP_Address=aws ec2 run-instances --image-id ami-03265a0778a880afb --instance-type $INSTANCES_TYPE --security-group-ids sg-0ef3f217f9042a8d7 --count 1 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" --query 'Instances[0].PrivateIpAddress' --output text
+    IP_Address=$(aws ec2 run-instances --image-id ami-03265a0778a880afb --instance-type $INSTANCES_TYPE --security-group-ids sg-0ef3f217f9042a8d7 --count 1 --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$i}]" --query 'Instances[0].PrivateIpAddress' --output text)
     aws route53 change-resource-record-sets \
     --hosted-zone-id Z0685417SSJQDRXEKNGA \
     --change-batch "
