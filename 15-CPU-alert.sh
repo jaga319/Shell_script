@@ -1,5 +1,5 @@
 #!/bin/bash
-C=$(top -n 3 -b)
+C=$(top -n 1 -b)
 host=$(hostname)
 CP=$(echo "$C" | awk '$1=="%Cpu(s):" {print int($2) }')
 if [ $CP -gt 90 ];then 
