@@ -1,6 +1,6 @@
 #!/bin/bash
 C=$(top -n 1 -b)
-host=$(hostnmae -i)
+host=$(hostname -i)
 CP=$(echo "$C" | awk '$1=="%Cpu(s):" {print $2 }') 
 
 if [ $CP -ge 0 ]
